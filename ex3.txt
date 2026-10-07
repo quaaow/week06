@@ -1,0 +1,21 @@
+Experiment results for ex3:
+
+1. When n = 3:
+Total processes created: 8 (including the initial process).
+Explanation:
+At each iteration i of the loop, all existing processes call fork().
+- Iteration 1: 1 process calls fork() -> 2 processes.
+- Iteration 2: 2 processes call fork() -> 4 processes.
+- Iteration 3: 4 processes call fork() -> 8 processes.
+The number of processes doubles on each iteration: 2^n = 2^3 = 8 processes.
+
+2. When n = 5:
+Total processes created: 32 (including the initial process).
+Explanation:
+The loop continues doubling the processes:
+- Iteration 4: 8 processes call fork() -> 16 processes.
+- Iteration 5: 16 processes call fork() -> 32 processes.
+Formula: 2^n = 2^5 = 32 processes.
+
+Difference:
+The process tree grows exponentially as 2^n. Increasing n from 3 to 5 increases the number of processes by a factor of 4 (from 8 to 32).
